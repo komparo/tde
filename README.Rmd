@@ -1,0 +1,14 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "docs/figures/README-",
+  out.width = "100%"
+)
+```
+
+![komparo / Trajectory Differential Expression](docs/figures/logo.png)
