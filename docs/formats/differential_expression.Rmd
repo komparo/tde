@@ -1,0 +1,28 @@
+---
+title: "Differential expression"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Differential expression formats
+
+## Position of differential expression in the trajectory
+
+### Overall
+
+### Branch
+
+### Pseudotime
+
+### Branch-pseudotime
+
+## Indicators for differential expression
+
+### Yes/no
+
+### Ranking
+
+### P-value/q-value
