@@ -1,0 +1,23 @@
+rule all:
+  input: "datasets.csv"
+
+rule list_datasets:
+  output: "datasets.csv"
+  input: dynamic("datasets/dynverse/{dataset_id}/expression.csv")
+  script:
+    "modules/list_datasets.R"
+
+rule datasets_dyntoy:
+  input:
+    "dataset_designs/dynverse/dyntoy/{dataset_id}.json"
+  output:
+    expression = "datasets/dynverse/{dataset_id}/expression.csv"
+  script:
+    "modules/dataset_generators/dyntoy/run.R"
+    
+rule dataset_design_dyntoy:
+  output:
+    dynamic("dataset_designs/dynverse/dyntoy/{dataset_id}.json")
+  script:
+    "modules/dataset_generators/dyntoy/create_design.R"
+    
