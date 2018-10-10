@@ -13,11 +13,11 @@ rule datasets_dyntoy:
   output:
     expression = "data/datasets/dynverse/{dataset_id}/expression.csv"
   script:
-    "modules/dataset_generators/dyntoy/run.R"
+    "modules/datasets/komparo/dyntoy/run.R"
     
 rule dataset_design_dyntoy:
   output:
     dynamic("data/dataset_designs/dynverse/dyntoy/{dataset_id}.json")
   script:
-    "modules/dataset_generators/dyntoy/create_design.R"
+    "modules/datasets/komparo/dyntoy/create_design.R"
     
