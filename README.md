@@ -1,2 +1,6 @@
 
 ![komparo / Trajectory Differential Expression](docs/figures/logo.png)
+
+This repository is an attempt to create a workflow to do continuous and
+democratic benchmarking, applied on trajectory differential expression
+methods. It’s still a big work in progress, but stay tuned\!
