@@ -1,0 +1,22 @@
+---
+title: "Workflow"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+datasets <- read_csv(snakemake@input$datasets)
+
+datasets %>% knitr::kable()
+```
+
+```{r}
+executions <- read_csv(snakemake@input$executions)
+
+executions %>% knitr::kable()
+```
+
