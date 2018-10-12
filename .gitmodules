@@ -1,0 +1,3 @@
+[submodule "modules/datasets/komparo/dyntoy"]
+	path = modules/datasets/komparo/dyntoy
+	url = git@github.com:komparo/tde_dataset_dyntoy.git
