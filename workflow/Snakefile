@@ -1,23 +1,29 @@
+include: "modules/datasets/Snakefile"
+
 rule all:
-  input: "results/datasets.csv"
-
-rule list_datasets:
-  output: "results/datasets.csv"
-  input: dynamic("data/datasets/dynverse/{dataset_id}/expression.csv")
-  script:
-    "modules/list_datasets.R"
-
-rule datasets_dyntoy:
+  input: "README.md"
+  
+rule readme:
+  input: 
+    datasets = "data/datasets/datasets.csv",
+    executions = "data/executions/meta.csv"
+  output: "README.md"
+  script: "README.Rmd"
+  
+rule execution_design:
+  version: "2"
   input:
-    "data/dataset_designs/dynverse/dyntoy/{dataset_id}.json"
+    datasets = "data/datasets/datasets.csv"
   output:
-    expression = "data/datasets/dynverse/{dataset_id}/expression.csv"
+    design = dynamic("data/executions/{method_id}/{dataset_id}/meta.yaml")
   script:
-    "modules/datasets/komparo/dyntoy/run.R"
+    "modules/execution_design.R"
     
-rule dataset_design_dyntoy:
-  output:
-    dynamic("data/dataset_designs/dynverse/dyntoy/{dataset_id}.json")
-  script:
-    "modules/datasets/komparo/dyntoy/create_design.R"
-    
+rule list_executions:
+  input: dynamic("data/executions/{method_id}/{dataset_id}/meta.yaml")
+  output: "data/executions/meta.csv"
+  script: "modules/list_executions.R"
+  
+rule execute:
+  input: "data/executions/{method_id}/{dataset_id}/meta.yaml"
+  output: "data/executions/{method_id}/{dataset_id}/model.json"
