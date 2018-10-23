@@ -6,7 +6,7 @@ library(processx)
 #   Run all metric modules                                                 ####
 metric_modules <- tibble(
   script_location = fs::dir_ls(recursive = TRUE, regexp = "modules/metrics/[^/]*/[^/]*/workflow.R")
-) %>%
+) %>% 
   mutate(
     folder = fs::path_dir(script_location),
     id = fs::path_dir(script_location) %>% fs::path_rel("modules/metrics"),
@@ -24,3 +24,6 @@ metrics <- get("generate_metric_calls", module_environment)(
   scores_folder = metric_module$scores_folder,
   methods = methods
 )
+
+metrics$start()
+metrics$wait()
