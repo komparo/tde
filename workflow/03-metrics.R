@@ -25,5 +25,4 @@ metrics <- get("generate_metric_calls", module_environment)(
   methods = methods
 )
 
-metrics$start()
-metrics$wait()
+workflow(list(metrics))$run()
