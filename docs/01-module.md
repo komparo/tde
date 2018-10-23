@@ -1,7 +1,7 @@
 Add dockerhub username and password (encrypted)
 
 ```
-travis encrypt DOCKERHUB_USERNAME=... --add env.globa
+travis encrypt DOCKERHUB_USERNAME=... --add env.global
 travis encrypt DOCKERHUB_PASSWORD=... --add env.global
 ```
 
