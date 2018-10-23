@@ -2,38 +2,27 @@ library(tidyverse)
 library(fs)
 library(processx)
 
-
 #   ____________________________________________________________________________
 #   Run all dataset modules                                                 ####
 dataset_modules <- tibble(
-  snakefile_location = fs::dir_ls("modules/datasets", recursive = TRUE, regexp = "/Snakefile")
+  script_location = fs::dir_ls("modules/datasets", recursive = TRUE, regexp = "/workflow.R")
 ) %>% 
   mutate(
-    source = str_replace(snakefile_location, "modules/datasets/(.*)/Snakefile", "\\1"),
-    folder = str_glue("data/datasets/{source}/")
+    folder = fs::path_dir(script_location),
+    id = fs::path_dir(script_location) %>% fs::path_rel("modules/datasets"),
+    datasets_folder = str_glue("data/datasets/{id}/")
   )
-
-# create output folders if they do not exist
-fs::dir_create(dataset_modules$folder)
 
 # call the workflow of every dataset module
 dataset_module <- as.list(dataset_modules[1, ])
-processx::run(
-  "snakemake",
-  c(
-    "--use-singularity",
-    "--snakefile",
-    dataset_module$snakefile_location,
-    "--directory",
-    dataset_module$folder
-  ),
-  echo_cmd = T
+
+module_environment <- new.env()
+source(dataset_module$script_location, local = module_environment)
+
+datasets <- get("generate_dataset_calls", module_environment)(
+  workflow_folder = dataset_module$folder,
+  datasets_folder = dataset_module$datasets_folder
 )
 
-
-#   ____________________________________________________________________________
-#   List all datasets and the objects they created                          ####
-
-datasets <- tibble(
-  meta_location = fs::dir_ls("data/datasets/", regexp = "/meta.yml")
-)
+datasets$start()
+datasets$wait()
