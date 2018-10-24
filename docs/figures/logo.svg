@@ -75,9 +75,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="481.01106"
-     inkscape:cy="24.350914"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="607.00873"
+     inkscape:cy="-16.307349"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1475,13 +1475,13 @@
     <text
        id="text817-7-3-3-6"
        y="17.972313"
-       x="197.75011"
+       x="198.49846"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.90030861px;line-height:0;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#242424;fill-opacity:1;stroke:none;stroke-width:0.62966663"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.85341978px;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:end;text-anchor:end;fill:#242424;fill-opacity:1;stroke-width:0.62966663"
          y="17.972313"
-         x="197.75011"
+         x="198.49846"
          id="tspan815-5-6-6-7"
-         sodipodi:role="line">continuous &amp; collaborative benchmark for</tspan></text>
+         sodipodi:role="line">a continuous &amp; collaborative benchmark for</tspan></text>
   </g>
 </svg>
