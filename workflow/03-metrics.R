@@ -24,5 +24,3 @@ metrics <- get("generate_metric_calls", module_environment)(
   scores_folder = metric_module$scores_folder,
   methods = methods
 ) %>% call_collection("metrics", .)
-
-workflow(metrics)$run()

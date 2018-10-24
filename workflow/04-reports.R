@@ -26,5 +26,3 @@ reports <- get("generate_report_calls", module_environment)(
   metrics = metrics,
   methods = methods
 ) %>% call_collection("reports", .)
-
-workflow(reports)$run()

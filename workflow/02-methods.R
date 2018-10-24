@@ -23,6 +23,4 @@ methods <- get("generate_method_calls", module_environment)(
   workflow_folder = method_module$folder,
   models_folder = method_module$models_folder,
   datasets = datasets
-) %>% call_collection("methods/", .)
-
-workflow(methods)$run()
+) %>% call_collection("methods", .)
