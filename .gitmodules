@@ -1,3 +1,15 @@
 [submodule "modules/datasets/komparo/dyntoy"]
 	path = modules/datasets/komparo/dyntoy
 	url = git@github.com:komparo/tde_dataset_dyntoy.git
+[submodule "modules/methods/komparo/random"]
+	path = modules/methods/komparo/random
+	url = git@github.com:komparo/tde_method_random.git
+[submodule "modules/metrics/komparo/dummy"]
+	path = modules/metrics/komparo/dummy
+	url = git@github.com:komparo/tde_metric_dummy.git
+[submodule "modules/reports/komparo/dummy"]
+	path = modules/reports/komparo/dummy
+	url = git@github.com:komparo/tde_report_dummy.git
+[submodule "reports"]
+	path = reports
+	url = git@github.com:komparo/tde_reports.git

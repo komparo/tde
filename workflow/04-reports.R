@@ -27,4 +27,35 @@ reports <- get("generate_report_calls", module_environment)(
   methods = methods
 ) %>% call_collection("reports", .)
 
-workflow(reports)$run()
+
+
+report_thumbnails <- rscript_call(
+  "report_thumbnails",
+  design = reports$design,
+  inputs = reports$outputs %>% 
+    select(rendered) %>% 
+    mutate(
+      script = list(script_file("scripts/report_overview/create_thumbnail.R"))
+    )
+  ,
+  outputs = reports$design %>% 
+    transmute(
+      thumbnail = str_glue("reports/.screenshots/{id}/screenshot.png") %>% map(derived_file)
+    )
+)
+
+report_overview <- rmd_call(
+  "report_overview",
+  inputs = bind_cols(reports$outputs, report_thumbnails$outputs) %>% 
+    select(rendered, thumbnail) %>% 
+    map(object_set) %>% 
+    object_set() %>% list(reports = .) %>% 
+    c(list(
+      script = script_file("scripts/report_overview/report_overview.Rmd"),
+      style = raw_file("scripts/report_overview/style.css")
+    ))
+  ,
+  outputs = list(
+    rendered = derived_file("reports/index.html")
+  )
+)

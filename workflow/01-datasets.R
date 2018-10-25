@@ -22,6 +22,4 @@ source(dataset_module$script_location, local = module_environment)
 datasets <- get("generate_dataset_calls", module_environment)(
   workflow_folder = dataset_module$folder,
   datasets_folder = dataset_module$datasets_folder
-) %>% call_collection("datasets/", .)
-
-workflow(datasets)$run()
+) %>% call_collection("datasets", .)

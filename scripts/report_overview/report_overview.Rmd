@@ -1,0 +1,52 @@
+---
+title: "Trajectory differential expression reports"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = knit_root_dir) # knit_root_dir <- fs::path_abs(".")
+
+library(tidyverse)
+library(htmltools)
+
+rendered_dir <- fs::path_dir(outputs[["rendered"]])
+```
+
+<style>
+```{r, results='asis'}
+readr::read_lines(inputs[["style"]]) %>% cat()
+```
+</style>
+
+```{r, results='asis'}
+reports <- inputs[["reports"]] %>% as_tibble()
+
+ncol <- 3
+nrow <- ceiling(nrow(reports) / ncol)
+tags$table(
+  map(seq_len(nrow), function(row_ix) {
+    tags$tr(
+      map(seq_len(ncol), function(col_ix) {
+        cell_ix <- col_ix + (row_ix - 1) * ncol
+        
+        if (cell_ix < length(inputs)) {
+          report <- dynutils::extract_row_to_list(reports, cell_ix)
+          tags$td(
+            tags$div(
+              class = "thumbnail",
+              tags$a(
+                tags$img(src = fs::path_rel(report$thumbnail, rendered_dir)),
+                href = fs::path_rel(report$rendered, rendered_dir)
+              )
+            )
+          )
+        } else {
+          tags$td()
+        }
+      })
+    )
+  })
+)
+```
+
