@@ -10,3 +10,6 @@
 [submodule "modules/reports/komparo/dummy"]
 	path = modules/reports/komparo/dummy
 	url = git@github.com:komparo/tde_report_dummy.git
+[submodule "reports"]
+	path = reports
+	url = git@github.com:komparo/tde_reports.git
