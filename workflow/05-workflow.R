@@ -11,7 +11,8 @@ workflow <- workflow(
   datasets,
   methods,
   metrics,
-  reports
+  reports,
+  report_overview
 )
 
 workflow$reset()
