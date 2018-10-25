@@ -17,4 +17,3 @@ workflow <- workflow(
 workflow$reset()
 workflow$run()
 
-workflow$plot()
