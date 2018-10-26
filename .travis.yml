@@ -1,0 +1,11 @@
+language: r
+cache: packages
+pandoc_version: 1.19.2.1
+
+before_script:
+  - chmod +x docs/deploy/build.sh
+  - chmod +x docs/deploy/deploy.sh
+
+script:
+  - docs/deploy/build.sh
+  - docs/deploy/deploy.sh
