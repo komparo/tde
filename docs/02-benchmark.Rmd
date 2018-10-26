@@ -1,3 +1,5 @@
+# The benchmark
+
 Add gh-pages as subtree in the reports folder
 
 ```bash

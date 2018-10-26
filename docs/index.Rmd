@@ -1,0 +1,12 @@
+--- 
+title: "A continuous and collaborative benchmark for trajectory differential expression"
+author: "Wouter Saelens"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+---
+
+![komparo / Trajectory Differential Expression](figures/logo.png)
+
+# Introduction
