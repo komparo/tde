@@ -1,9 +1,11 @@
 #!/bin/sh
 
 set -ev
-pushd docs
+
+cd docs
+
 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', output_dir = 'rendered')"
 
 touch .nojekyll
 
-popd
+cd ..
