@@ -8,6 +8,9 @@ before_script:
 script:
   - docs/deploy/build.sh
   
+git:
+  submodules: false
+  
 deploy:
   provider: pages
   skip-cleanup: true
