@@ -29,33 +29,39 @@ reports <- get("generate_report_calls", module_environment)(
 
 
 
+
+
+
+
 report_thumbnails <- rscript_call(
   "report_thumbnails",
-  design = reports$design,
-  inputs = reports$outputs %>% 
-    select(rendered) %>% 
+  design = reports$design %>% 
     mutate(
-      script = list(script_file("scripts/report_overview/create_thumbnail.R"))
-    )
-  ,
-  outputs = reports$design %>% 
-    transmute(
-      thumbnail = str_glue("reports/.screenshots/{id}/screenshot.png") %>% map(derived_file)
-    )
+      script = list(script_file("scripts/report_overview/create_thumbnail.R")),
+      thumbnail = str_glue("reports/assets/screenshots/{id}/screenshot.png") %>% map(derived_file)
+    ),
+  inputs = c("script", "rendered"),
+  outputs = c("thumbnail")
 )
 
-report_overview <- rmd_call(
+report_render_overview <- rmd_call(
   "report_overview",
-  inputs = bind_cols(reports$outputs, report_thumbnails$outputs) %>% 
-    select(rendered, thumbnail) %>% 
-    map(object_set) %>% 
-    object_set() %>% list(reports = .) %>% 
-    c(list(
-      script = script_file("scripts/report_overview/report_overview.Rmd"),
-      style = raw_file("scripts/report_overview/style.css")
-    ))
-  ,
-  outputs = list(
+  design = list(
+    reports = bind_cols(reports$design, report_thumbnails$design) %>% 
+      select(rendered, thumbnail) %>% 
+      map(object_set) %>% 
+      object_set(),
+    script = script_file("scripts/report_overview/report_overview.Rmd"),
+    style = raw_file("scripts/report_overview/style.css"),
     rendered = derived_file("reports/index.html")
-  )
+  ),
+  inputs = c("script", "style", "reports"),
+  outputs = c("rendered")
+)
+
+
+report_overview <- call_collection(
+  "report_overview",
+  report_thumbnails,
+  report_render_overview
 )
