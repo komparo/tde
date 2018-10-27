@@ -1,12 +1,13 @@
 --- 
-title: "A continuous and collaborative benchmark for trajectory differential expression methods"
-author: "Wouter Saelens"
+title: "Trajectory differential expression benchmark | Contributors guide"
 date: "`r Sys.Date()`"
 site: "bookdown::bookdown_site"
 output:
-  bookdown::gitbook: default
+  bookdown::gitbook: 
+    css: "assets/style.css"
 github-repo: komparo/tde
-description: "Guide for adding functionality to the trajectory differential expression benchmark"
+description: "Guide for contributors to the benchmark for trajectory differential expression methods"
+output_dir: "rendered"
 ---
 
 # Overview

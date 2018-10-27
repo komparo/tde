@@ -1,0 +1,33 @@
+# Modules
+
+A module can be anything that generates output files on some (optional) input. In this benchmark, we define five types of modules: dataset generators, methods, metrics, reports and custom modules. A module is more than just some code, as it is connected to a set of tools which make them portable, robust and reproducible:
+
+
+
+## Code
+
+## Portable environment: `r knitr::include_graphics("figures/logos/docker.png")`
+
+## Pipeline manager (certigo)
+
+## Version control: `r knitr::include_graphics("figures/logos/git.png")`
+
+## Code sharing: `r knitr::include_graphics("figures/logos/github.png")`
+
+## Testing and continuous integration: `r knitr::include_graphics("figures/logos/travis.png")`
+Add github pattern (so that devtools install github does not hit the request limits)
+
+```
+travis encrypt GITHUB_PAT=... --add env.global
+```
+
+## Environment registry: `r knitr::include_graphics("figures/logos/docker.png")`
+
+Add dockerhub username and password (encrypted)
+
+```
+travis encrypt DOCKERHUB_USERNAME=... --add env.global
+travis encrypt DOCKERHUB_PASSWORD=... --add env.global
+```
+
+## Adding the module to the benchmark
