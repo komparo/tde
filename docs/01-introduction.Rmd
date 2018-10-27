@@ -1,0 +1,15 @@
+--- 
+title: "Trajectory differential expression benchmark | Contributors guide"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: 
+    css: "assets/style.css"
+github-repo: komparo/tde
+description: "Guide for contributors to the benchmark for trajectory differential expression methods"
+output_dir: "rendered"
+---
+
+![](figures/logo.png)
+
+# Overview {-}

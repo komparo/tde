@@ -1,0 +1,45 @@
+# Modules
+
+A module can be anything that creates a predefined set of output files, optionally based on some input files. In this benchmark, we define four types of modules: dataset generators, methods, metrics and report generators. Each module type has common (but not necessarely exactly the same) input and output, which is discussed later in the [Module types] section.
+
+A module is more than just code that generates some output. Each module is connected to a set of tools which make them portable, robust and reproducible:
+
+## Code
+
+## Portable environment: `r knitr::include_graphics("figures/logos/docker.png")`
+
+## Metadata
+
+List of <span class="required">**authors**</span>, containing:
+
+- <span class="required">**name**</span>
+- <span class="required">**contributions**</span>: One or more values from the [CRediT taxonomy](http://jeb.biologists.org/content/author-contributions).
+- <span class="required">**orcid**</span>: See [https://orcid.org/](https://orcid.org/)
+- <span class="optional">**github**</span>: Recommended
+- <span class="optional">**mail**</span>: Recommended
+
+## Pipeline manager (certigo)
+
+## Version control: `r knitr::include_graphics("figures/logos/git.png")`
+
+## Code sharing: `r knitr::include_graphics("figures/logos/github.png")`
+
+## Testing and continuous integration: `r knitr::include_graphics("figures/logos/travis.png")`
+
+<div class="optional">
+Add github pattern (so that devtools install github does not hit the request limits)
+
+```bash
+travis encrypt GITHUB_PAT=... --add env.global
+```
+
+</div>
+
+## Environment registry: `r knitr::include_graphics("figures/logos/docker.png")`
+
+To push the docker container to dockerhub, travis needs to know how to login.  dockerhub username and password (encrypted)
+
+```bash
+travis encrypt DOCKERHUB_USERNAME=... --add env.global
+travis encrypt DOCKERHUB_PASSWORD=... --add env.global
+```

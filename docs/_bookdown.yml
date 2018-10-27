@@ -1,0 +1,3 @@
+book_filename: "book.Rmd"
+edit: https://github.com/komparo/tde/edit/devel/docs/%s
+output_dir: "rendered"

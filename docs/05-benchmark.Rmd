@@ -1,0 +1,5 @@
+# Benchmark
+
+## Adding or updating a module
+
+Each module is included in the benchmark repository as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This submodule is fixed at a particular commit (for example: [](https://github.com/komparo/tde/tree/master/modules/datasets/komparo)).

@@ -1,0 +1,51 @@
+/************************************************************************/
+/* sidebar */
+
+/* images in sidebar */
+.book-summary li.chapter img {
+  max-height: 1em;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
+
+.book .book-summary ul.summary li a {
+  white-space: normal;
+}
+
+
+/************************************************************************/
+/* content */
+
+
+
+/* images */
+
+/* images in header */
+h2 > img {
+  max-height: 1em;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
+
+
+
+/* text */
+
+
+
+
+/* required-optional */
+
+span.required, span.required code {
+  background-color: #ffe1e1ff !important;
+}
+
+span.optional, span.optional code {
+  background-color: #e3ecfdff !important;
+}
+
+/* 
+
+
