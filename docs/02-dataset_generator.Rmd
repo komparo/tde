@@ -1,3 +1,0 @@
-# Dataset generator
-
-![](formats/figures/dataset_generator.svg)

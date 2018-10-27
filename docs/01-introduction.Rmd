@@ -1,5 +1,5 @@
 --- 
-title: "Trajectory differential expression benchmark | Contributors guide"
+title: "Trajectory differential expression benchmark | Reference"
 date: "`r Sys.Date()`"
 site: "bookdown::bookdown_site"
 output:
@@ -10,6 +10,6 @@ description: "Guide for contributors to the benchmark for trajectory differentia
 output_dir: "rendered"
 ---
 
-# Overview
-
 ![](figures/logo.png)
+
+# Overview {-}

@@ -1,3 +1,0 @@
-# Report generator
-
-![](formats/figures/report_generator.svg)

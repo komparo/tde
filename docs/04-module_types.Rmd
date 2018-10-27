@@ -1,0 +1,24 @@
+# Module types
+
+## Dataset generator
+
+![](formats/figures/dataset_generator.svg)
+
+
+## Method
+
+![](formats/figures/method.svg)
+
+
+## Metric
+
+![](formats/figures/metric.svg)
+
+
+## Report generator
+
+![](formats/figures/report_generator.svg)
+
+
+## Custom
+
