@@ -1,5 +1,5 @@
 --- 
-title: "Trajectory differential expression benchmark | Reference"
+title: "Trajectory differential expression benchmark | Contributors guide"
 date: "`r Sys.Date()`"
 site: "bookdown::bookdown_site"
 output:
