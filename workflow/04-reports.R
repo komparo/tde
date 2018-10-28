@@ -10,22 +10,23 @@ report_modules <- tibble(
   mutate(
     folder = fs::path_dir(script_location),
     id = fs::path_dir(script_location) %>% fs::path_rel("modules/reports"),
-    reports_folder = str_glue("reports/{id}/")
+    reports_directory = str_glue("reports/{id}/")
   )
 
-# call the workflow of every report module
+# call the workflow of every metric module
 report_module <- as.list(report_modules[1, ])
 
-module_environment <- new.env()
-source(report_module$script_location, local = module_environment)
-
-reports <- get("generate_report_calls", module_environment)(
-  workflow_folder = report_module$folder,
-  reports_folder = report_module$reports_folder,
+reports_oi <- load_call(
+  report_module$script_location,
+  derived_file_directory = report_module$reports_directory,
+  id = report_module$id,
   datasets = datasets,
-  metrics = metrics,
-  methods = methods
-) %>% call_collection("reports", .)
+  models = models,
+  scores = scores
+)
+
+reports <- reports_oi %>% call_collection("reports", .)
+
 
 
 

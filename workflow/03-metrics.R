@@ -10,17 +10,17 @@ metric_modules <- tibble(
   mutate(
     folder = fs::path_dir(script_location),
     id = fs::path_dir(script_location) %>% fs::path_rel("modules/metrics"),
-    scores_folder = str_glue("data/scores/{id}/")
+    scores_directory = str_glue("data/scores/{id}/")
   )
 
 # call the workflow of every metric module
 metric_module <- as.list(metric_modules[1, ])
 
-module_environment <- new.env()
-source(metric_module$script_location, local = module_environment)
+scores_oi <- load_call(
+  metric_module$script_location,
+  derived_file_directory = metric_module$scores_directory,
+  id = metric_module$id,
+  models = models
+)
 
-metrics <- get("generate_metric_calls", module_environment)(
-  workflow_folder = metric_module$folder,
-  scores_folder = metric_module$scores_folder,
-  methods = methods
-) %>% call_collection("metrics", .)
+scores <- scores_oi %>% call_collection("metrics", .)

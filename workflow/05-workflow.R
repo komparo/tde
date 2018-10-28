@@ -9,8 +9,8 @@ source("workflow/04-reports.R")
 
 workflow <- workflow(
   datasets,
-  methods,
-  metrics,
+  models,
+  scores,
   reports,
   report_overview
 )

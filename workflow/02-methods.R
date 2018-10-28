@@ -10,17 +10,17 @@ method_modules <- tibble(
   mutate(
     folder = fs::path_dir(script_location),
     id = fs::path_dir(script_location) %>% fs::path_rel("modules/methods"),
-    models_folder = str_glue("data/models/{id}/")
+    models_directory = str_glue("data/models/{id}/")
   )
 
 # call the workflow of every method module
 method_module <- as.list(method_modules[1, ])
 
-module_environment <- new.env()
-source(method_module$script_location, local = module_environment)
-
-methods <- get("generate_method_calls", module_environment)(
-  workflow_folder = method_module$folder,
-  models_folder = method_module$models_folder,
+models_oi <- load_call(
+  method_module$script_location,
+  derived_file_directory = method_module$models_directory,
+  id = method_module$id,
   datasets = datasets
-) %>% call_collection("methods", .)
+)
+
+models <- models_oi %>% call_collection("methods", .)
