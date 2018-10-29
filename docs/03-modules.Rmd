@@ -10,6 +10,8 @@ A module is more than just code that generates some output. Each module is conne
 
 ## Metadata
 
+The meta.yml file is a YAML file containing some essential metadata on the module. Two fields are required:
+
 List of <span class="required">**authors**</span>, containing:
 
 - <span class="required">**name**</span>
@@ -18,13 +20,15 @@ List of <span class="required">**authors**</span>, containing:
 - <span class="optional">**github**</span>: Recommended
 - <span class="optional">**mail**</span>: Recommended
 
+The **license** of the code within the module (not including any packages or )
+
 ## Pipeline manager (certigo)
 
 ## Version control: `r knitr::include_graphics("figures/logos/git.png")`
 
 ## Code sharing: `r knitr::include_graphics("figures/logos/github.png")`
 
-## Testing and continuous integration: `r knitr::include_graphics("figures/logos/travis.png")`
+## Automated testing and continuous integration: `r knitr::include_graphics("figures/logos/travis.png")`
 
 <div class="optional">
 Add github pattern (so that devtools install github does not hit the request limits)
