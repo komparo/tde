@@ -2,8 +2,8 @@
 	path = modules/datasets/komparo/dyntoy
 	url = git@github.com:komparo/tde_dataset_dyntoy.git
 [submodule "modules/methods/komparo/random"]
-	path = modules/methods/komparo/random
-	url = git@github.com:komparo/tde_method_random.git
+	path = modules/methods/komparo/controls
+	url = git@github.com:komparo/tde_method_controls.git
 [submodule "modules/metrics/komparo/dummy"]
 	path = modules/metrics/komparo/dummy
 	url = git@github.com:komparo/tde_metric_dummy.git
