@@ -15,6 +15,9 @@ workflow <- workflow(
   report_overview
 )
 
+# models$calls[[10]]$start_and_wait()
+
 workflow$reset()
 workflow$run()
 
+fs::file_show(last(report_overview$calls)$outputs$rendered$string)

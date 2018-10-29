@@ -32,7 +32,7 @@ reports <- reports_oi %>% call_collection("reports", .)
 
 
 
-
+# Generate report overview
 
 report_thumbnails <- rscript_call(
   "report_thumbnails",
@@ -41,8 +41,8 @@ report_thumbnails <- rscript_call(
       script = list(script_file("scripts/report_overview/create_thumbnail.R")),
       thumbnail = str_glue("reports/assets/screenshots/{id}/screenshot.png") %>% map(derived_file)
     ),
-  inputs = c("script", "rendered"),
-  outputs = c("thumbnail")
+  inputs = exprs(script, rendered),
+  outputs = exprs(thumbnail)
 )
 
 report_render_overview <- rmd_call(
@@ -56,8 +56,8 @@ report_render_overview <- rmd_call(
     style = raw_file("scripts/report_overview/style.css"),
     rendered = derived_file("reports/index.html")
   ),
-  inputs = c("script", "style", "reports"),
-  outputs = c("rendered")
+  inputs = exprs(script, style, reports),
+  outputs = exprs(rendered)
 )
 
 
