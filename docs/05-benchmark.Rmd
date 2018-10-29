@@ -2,23 +2,50 @@
 
 ## Adding or updating a module
 
-Each module is included in the benchmark repository as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This submodule is fixed at a particular commit (for example: [](https://github.com/komparo/tde/tree/master/modules/datasets/komparo)).
+Each module is included in the benchmark repository as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This module is fixed at a particular commit ([example](https://github.com/komparo/tde/tree/master/modules/datasets/komparo)).
 
+Adding a submodule
 
+```bash
+REMOTE=git@...
+SUBMODULE_PATH=modules/...
+git submodule init $REMOTE $SUBMODULE_PATH
+```
+
+Updating a module is currently not so straightforward as I would like:
+
+```bash
+# first clone the repository
+git clone https://github.com/komparo/tde.git
+cd tde
+
+# init the submodule, update it and pull the latest version
+SUBMODULE_PATH=[...]
+git submodule init
+git submodule update $SUBMODULE_PATH
+pushd $SUBMODULE_PATH
+git pull
+popd
+
+# commit the new pointer to the submodule
+git add $SUBMODULE_PATH
+git commit -m "updated submodule"
+```
 
 ## Cookbook
+
+Some common commands when adding and changing things in the benchmark
 
 ### Rename submodule
 
 To move to different directory
 ```bash
-git mv [from] [to]
+FROM=...
+TO=...
+git mv $FROM $TO
 ```
 
-To change remote:
+To change remote
 
-Edit remote in `.gitmodules`
-
-```bash
-git submodule sync
-```
+1. Edit remote in `.gitmodules`
+2. `git submodule sync`
