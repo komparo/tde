@@ -12,3 +12,5 @@ tuned\!
 
 Contributors guide:
 [komparo.github.io/tde](https://komparo.github.io/tde)
+
+Reports: [tde.netlify.com](https://tde.netlify.com)
