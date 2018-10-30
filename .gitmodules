@@ -5,8 +5,8 @@
 	path = modules/methods/komparo/controls
 	url = git@github.com:komparo/tde_method_controls.git
 [submodule "modules/metrics/komparo/dummy"]
-	path = modules/metrics/komparo/dummy
-	url = git@github.com:komparo/tde_metric_dummy.git
+	path = modules/metrics/komparo/classification
+	url = git@github.com:komparo/tde_metric_classification.git
 [submodule "modules/reports/komparo/dummy"]
 	path = modules/reports/komparo/dummy
 	url = git@github.com:komparo/tde_report_dummy.git
