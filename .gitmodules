@@ -13,3 +13,6 @@
 [submodule "reports"]
 	path = reports
 	url = git@github.com:komparo/tde_reports.git
+[submodule "formats"]
+	path = formats
+	url = git@github.com:komparo/tde_formats.git
