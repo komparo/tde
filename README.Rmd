@@ -17,7 +17,10 @@ knitr::opts_chunk$set(
 
 ---
 
-Contributors guide: [komparo.github.io/tde](https://komparo.github.io/tde)
+The benchmark has three main components:
 
-Reports: [tde.netlify.com](https://tde.netlify.com)
+- Common **file formats** for interchanging data
+- **Modules** which generate datasets, run a method, evaluate the output, and generate a report
+- **Benchmark workflow**, which runs the modules, validate their output, and ultimately generate a set of reports published at [tde.netlify.com](https://tde.netlify.com)
 
+These different components are all discussed in the contributors guide: [komparo.github.io/tde](https://komparo.github.io/tde)
