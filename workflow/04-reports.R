@@ -33,7 +33,6 @@ reports <- reports_oi %>% call_collection("reports", .)
 
 
 # Generate report overview
-
 report_thumbnails <- rscript_call(
   "report_thumbnails",
   design = reports$design %>% 

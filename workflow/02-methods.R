@@ -23,6 +23,6 @@ models_oi <- load_call(
   datasets = datasets
 )
 
-models_oi$design$method_id <- paste0(method_module$id, models_oi$design$method_id)
+models_oi$design$method_id <- paste0(method_module$id, "/", models_oi$design$method_id)
 
 models <- models_oi %>% call_collection("methods", .)
