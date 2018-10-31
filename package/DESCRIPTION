@@ -11,9 +11,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends:
-  tdeformats,
-  certigo
+  tdeformats
 Remotes:
-  komparo/tde_formats,
-  komparo/certigo@devel
+  komparo/tde_formats
 RoxygenNote: 6.1.0
