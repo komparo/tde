@@ -1,0 +1,19 @@
+Package: tde
+Title: Wrapper package for trajectory differential expression
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Wouter",
+           family = "Saelens",
+           role = c("aut", "cre"),
+           email = "wouter.saelens@gmail.com")
+Description: Wrapper package for trajectory differential expression
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends:
+  tdeformats,
+  certigo
+Remotes:
+  komparo/tde_formats,
+  komparo/certigo@devel
+RoxygenNote: 6.1.0
