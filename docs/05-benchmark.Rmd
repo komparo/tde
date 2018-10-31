@@ -7,8 +7,8 @@ Each module is included in the benchmark repository as a [git submodule](https:/
 Adding a submodule
 
 ```bash
-REMOTE=git@...
-SUBMODULE_PATH=modules/...
+REMOTE=git@…
+SUBMODULE_PATH=modules/…
 git submodule init $REMOTE $SUBMODULE_PATH
 ```
 
@@ -20,7 +20,7 @@ git clone https://github.com/komparo/tde.git
 cd tde
 
 # init the submodule, update it and pull the latest version
-SUBMODULE_PATH=[...]
+SUBMODULE_PATH=…
 git submodule init
 git submodule update $SUBMODULE_PATH
 pushd $SUBMODULE_PATH
@@ -40,8 +40,8 @@ Some common commands when adding and changing things in the benchmark
 
 To move to different directory
 ```bash
-FROM=...
-TO=...
+FROM=…
+TO=…
 git mv $FROM $TO
 ```
 
@@ -49,3 +49,4 @@ To change remote
 
 1. Edit remote in `.gitmodules`
 2. `git submodule sync`
+3. `git add .gitmodules` and `git commit`

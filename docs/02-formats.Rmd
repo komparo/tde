@@ -1,7 +1,5 @@
 # Formats
 
-
-
 ## Datasets
 
 ### Expression data
@@ -11,4 +9,3 @@
 ### Overall differential expression
 
 ## Scores
-
