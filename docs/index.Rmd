@@ -10,7 +10,17 @@ description: "Guide for contributors to the benchmark for trajectory differentia
 output_dir: "rendered"
 ---
 
-![](figures/logo.png)
-
 # Overview {-}
 
+```{r setup, echo = FALSE, include = FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+```
+
+![](figures/logo.png)
+
+Welcome to the contributors guide for the benchmark on trajectory differential expression methods. Here, we discuss how the benchmark is organised and how it can be extended.
+
+This source for this guide is available at https://github.com/komparo/tde/tree/devel/docs.

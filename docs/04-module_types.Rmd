@@ -2,22 +2,22 @@
 
 ## Dataset generator
 
-![](module_types/figures/dataset_generator.svg)
+![](figures/module_types/dataset_generator.svg)
 
 
 ## Method
 
-![](module_types/figures/method.svg)
+![](figures/module_types/method.svg)
 
 
 ## Metric
 
-![](module_types/figures/metric.svg)
+![](figures/module_types/metric.svg)
 
 
 ## Report generator
 
-![](module_types/figures/report_generator.svg)
+![](figures/module_types/report_generator.svg)
 
 
 ## Custom

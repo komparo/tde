@@ -29,6 +29,13 @@ h2 > img {
 }
 
 
+/* svgs embedded as object */
+
+object {
+  max-width:100%;
+}
+
+
 
 
 /* text */
@@ -38,12 +45,16 @@ h2 > img {
 
 /* required-optional */
 
-span.required, span.required code {
+.required, .required code {
   background-color: #ffe1e1ff !important;
 }
 
-span.optional, span.optional code {
+.optional, .optional code {
   background-color: #e3ecfdff !important;
+}
+
+.special, .special code {
+  background-color: #fff1e1ff !important;
 }
 
 /* 
