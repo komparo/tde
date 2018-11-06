@@ -5,6 +5,7 @@ site: "bookdown::bookdown_site"
 output:
   bookdown::gitbook: 
     css: "assets/style.css"
+    split_by: "section"
 github-repo: komparo/tde
 description: "Guide for contributors to the benchmark for trajectory differential expression methods"
 output_dir: "rendered"
