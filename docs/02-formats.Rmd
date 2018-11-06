@@ -2,10 +2,95 @@
 
 ## Datasets
 
-### Expression data
+### `gene_expression.csv`
 
-## Models
 
-### Overall differential expression
+```{r}
+gene_expression <- read_csv("../formats/inst/examples/gene_expression/good_1.csv", col_types = cols())
+colnames(gene_expression)[1] <- ""
+knitr::kable(gene_expression)
+```
+
+## Trajectory differential expression
+
+Differential expression results are represented as a table, where each differential expression event is one row. Within a trajectory, there are different possible types of differential expression, ranging from "overall" differential expression anywhere in the trajectory, to very specific types such as 
+
+<object type="image/svg+xml" data="figures/formats/differential_expression_overview.svg">
+</object>
+
+Each type of differential expression always contain the following columns:
+
+- <span class="required">**feature_id**</span>: Subset of features from the original datasets
+
+At least one of:
+
+- <span class="special">**significant**</span>: $\{\textrm{TRUE}, \textrm{FALSE}\}$
+- <span class="special">**p_value**</span>: $0 \leq \textrm{p_value} \leq 1$
+- <span class="special">**effect_size**</span>
+- <span class="special">**rank**</span>: $1 \leq \textrm{rank} \leq n$
+
+Any other columns are also allowed. If this column contains some commonly used type of data, feel free to add it to this list.
+
+### `tde_overall.csv`: Overall differential expression
+
+Overall trajectory differential expression indicates that the feature is changing somewhere along the trajectory.
+
+```{r}
+read_csv("../formats/inst/examples/tde_overall/good_1.csv", col_types = cols()) %>% 
+  knitr::kable()
+```
+
+
+### `tde_local.csv`: Local differential expression
+
+Local trajectory differential expression provides information on exactly where the expression of a feature changes. 
+
+Columns: 
+
+- <span class="required">**branch_id**</span>: The milestone at the tip point
+- <span class="required">**progression_percentage**</span>: The location within the branch at which the expression changes
+
+No duplicated feature_id, branch_id, and progression_percentages combinations are allowed.
+
+### `tde_tip_point.csv`: Tip point differential expression
+
+Tip point trajectory differential expression indicates that a feature is differentially expressed at a tip point, either upward or downward, compared to other locations in the trajectory. A feature can be differentially expressed at multiple tip points.
+
+Columns: 
+
+- <span class="required">**milestone_id**</span>: The milestone at the tip point
+
+No duplicated feature_id and milestone_id combinations are allowed.
+
+```{r}
+read_csv("../formats/inst/examples/tde_tip_point/good_1.csv", col_types = cols()) %>% 
+  knitr::kable()
+```
+
+### `tde_branch_point.csv`: Branch point differential expression
+
+- <span class="required">**milestone_id**</span>: The milestone at the branch point
+
+No duplicated feature_id and milestone_id combinations are allowed.
+
+### `tde_branch.csv`: Branch differential expression
+
+- <span class="required">**branch_id**</span>: The branch_id from the milestone_network
+
+No duplicated feature_id and branch_id combinations are allowed.
+
+### `tde_pseudotime.csv`: Pseudotime differential expression
+
+- <span class="required">**turning_point**</span>: The pseudotime value at which the expression changed
+
+No duplicated feature_id and turning_point values are allowed.
+
+### `tde_oscilating.csv`: Oscillatory differential expression
+
+- <span class="required">**turning_point**</span>: The pseudotime value at which the expression changed.
+
+Each feature_id requires an even number of rows. No duplicated feature_id and turning_point values are allowed.
 
 ## Scores
+
+The format of scores is more free than all other 
