@@ -12,6 +12,11 @@ Encoding: UTF-8
 LazyData: true
 Depends:
   tdeformats
+Imports:
+  dplyr,
+  ggplot2,
+  purrr,
+  readr
 Remotes:
   komparo/tde_formats
 RoxygenNote: 6.1.0
