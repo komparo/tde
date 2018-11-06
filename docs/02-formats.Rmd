@@ -94,3 +94,10 @@ Each feature_id requires an even number of rows. No duplicated feature_id and tu
 ## Scores
 
 The format of scores is more free than all other 
+
+```json
+{
+  "hi": "hi"
+}
+
+```

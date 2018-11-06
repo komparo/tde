@@ -14,7 +14,10 @@ output_dir: "rendered"
 # Overview {-}
 
 ```{r setup, echo = FALSE, include = FALSE}
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(purrr)
+library(ggplot2)
 knitr::opts_chunk$set(
   echo = FALSE
 )
