@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Trajectory differential expression benchmark | Contributors guide</title>
+  <meta name="description" content="Guide for contributors to the benchmark for trajectory differential expression methods">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Trajectory differential expression benchmark | Contributors guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Guide for contributors to the benchmark for trajectory differential expression methods" />
+  <meta name="github-repo" content="komparo/tde" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Trajectory differential expression benchmark | Contributors guide" />
+  
+  <meta name="twitter:description" content="Guide for contributors to the benchmark for trajectory differential expression methods" />
+  
+
+
+
+<meta name="date" content="2018-11-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="report-generator.html">
+<link rel="next" href="benchmark.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contributors guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="1" data-path="formats.html"><a href="formats.html"><i class="fa fa-check"></i><b>1</b> Formats</a><ul>
+<li class="chapter" data-level="1.1" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>1.1</b> Datasets</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="datasets.html"><a href="datasets.html#gene_expression.csv"><i class="fa fa-check"></i><b>1.1.1</b> <code>gene_expression.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html"><i class="fa fa-check"></i><b>1.2</b> Trajectory differential expression</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_overall.csv-overall-differential-expression"><i class="fa fa-check"></i><b>1.2.1</b> <code>tde_overall.csv</code>: Overall differential expression</a></li>
+<li class="chapter" data-level="1.2.2" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_local.csv-local-differential-expression"><i class="fa fa-check"></i><b>1.2.2</b> <code>tde_local.csv</code>: Local differential expression</a></li>
+<li class="chapter" data-level="1.2.3" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_tip_point.csv-tip-point-differential-expression"><i class="fa fa-check"></i><b>1.2.3</b> <code>tde_tip_point.csv</code>: Tip point differential expression</a></li>
+<li class="chapter" data-level="1.2.4" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_branch_point.csv-branch-point-differential-expression"><i class="fa fa-check"></i><b>1.2.4</b> <code>tde_branch_point.csv</code>: Branch point differential expression</a></li>
+<li class="chapter" data-level="1.2.5" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_branch.csv-branch-differential-expression"><i class="fa fa-check"></i><b>1.2.5</b> <code>tde_branch.csv</code>: Branch differential expression</a></li>
+<li class="chapter" data-level="1.2.6" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_pseudotime.csv-pseudotime-differential-expression"><i class="fa fa-check"></i><b>1.2.6</b> <code>tde_pseudotime.csv</code>: Pseudotime differential expression</a></li>
+<li class="chapter" data-level="1.2.7" data-path="trajectory-differential-expression.html"><a href="trajectory-differential-expression.html#tde_oscilating.csv-oscillatory-differential-expression"><i class="fa fa-check"></i><b>1.2.7</b> <code>tde_oscilating.csv</code>: Oscillatory differential expression</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scores.html"><a href="scores.html"><i class="fa fa-check"></i><b>1.3</b> Scores</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="modules.html"><a href="modules.html"><i class="fa fa-check"></i><b>2</b> Modules</a><ul>
+<li class="chapter" data-level="2.1" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>2.1</b> Code</a></li>
+<li class="chapter" data-level="2.2" data-path="portable-environment.html"><a href="portable-environment.html"><i class="fa fa-check"></i><b>2.2</b> Portable environment: <img src="figures/logos/docker.png" /><!-- --></a></li>
+<li class="chapter" data-level="2.3" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i><b>2.3</b> Metadata</a></li>
+<li class="chapter" data-level="2.4" data-path="pipeline-manager-certigo.html"><a href="pipeline-manager-certigo.html"><i class="fa fa-check"></i><b>2.4</b> Pipeline manager (certigo)</a></li>
+<li class="chapter" data-level="2.5" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>2.5</b> Version control: <img src="figures/logos/git.png" /><!-- --></a></li>
+<li class="chapter" data-level="2.6" data-path="code-sharing.html"><a href="code-sharing.html"><i class="fa fa-check"></i><b>2.6</b> Code sharing: <img src="figures/logos/github.png" /><!-- --></a></li>
+<li class="chapter" data-level="2.7" data-path="automated-testing-and-continuous-integration.html"><a href="automated-testing-and-continuous-integration.html"><i class="fa fa-check"></i><b>2.7</b> Automated testing and continuous integration: <img src="figures/logos/travis.png" /><!-- --></a></li>
+<li class="chapter" data-level="2.8" data-path="environment-registry.html"><a href="environment-registry.html"><i class="fa fa-check"></i><b>2.8</b> Environment registry: <img src="figures/logos/docker.png" /><!-- --></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="module-types.html"><a href="module-types.html"><i class="fa fa-check"></i><b>3</b> Module types</a><ul>
+<li class="chapter" data-level="3.1" data-path="dataset-generator.html"><a href="dataset-generator.html"><i class="fa fa-check"></i><b>3.1</b> Dataset generator</a></li>
+<li class="chapter" data-level="3.2" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>3.2</b> Method</a></li>
+<li class="chapter" data-level="3.3" data-path="metric.html"><a href="metric.html"><i class="fa fa-check"></i><b>3.3</b> Metric</a></li>
+<li class="chapter" data-level="3.4" data-path="report-generator.html"><a href="report-generator.html"><i class="fa fa-check"></i><b>3.4</b> Report generator</a></li>
+<li class="chapter" data-level="3.5" data-path="custom.html"><a href="custom.html"><i class="fa fa-check"></i><b>3.5</b> Custom</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="benchmark.html"><a href="benchmark.html"><i class="fa fa-check"></i><b>4</b> Benchmark</a><ul>
+<li class="chapter" data-level="4.1" data-path="adding-or-updating-a-module.html"><a href="adding-or-updating-a-module.html"><i class="fa fa-check"></i><b>4.1</b> Adding or updating a module</a></li>
+<li class="chapter" data-level="4.2" data-path="cookbook.html"><a href="cookbook.html"><i class="fa fa-check"></i><b>4.2</b> Cookbook</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cookbook.html"><a href="cookbook.html#rename-submodule"><i class="fa fa-check"></i><b>4.2.1</b> Rename submodule</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Trajectory differential expression benchmark | Contributors guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="custom" class="section level2">
+<h2><span class="header-section-number">3.5</span> Custom</h2>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="report-generator.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="benchmark.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/komparo/tde/edit/devel/docs/04-module_types.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"css": "assets/style.css",
+"split_by": "section"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

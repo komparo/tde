@@ -1,0 +1,62 @@
+/************************************************************************/
+/* sidebar */
+
+/* images in sidebar */
+.book-summary li.chapter img {
+  max-height: 1em;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
+
+.book .book-summary ul.summary li a {
+  white-space: normal;
+}
+
+
+/************************************************************************/
+/* content */
+
+
+
+/* images */
+
+/* images in header */
+h2 > img {
+  max-height: 1em;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
+
+/* svgs embedded as object */
+
+object {
+  max-width:100%;
+}
+
+
+
+
+/* text */
+
+
+
+
+/* required-optional */
+
+.required, .required code {
+  background-color: #ffe1e1ff !important;
+}
+
+.optional, .optional code {
+  background-color: #e3ecfdff !important;
+}
+
+.special, .special code {
+  background-color: #fff1e1ff !important;
+}
+
+/* 
+
+
