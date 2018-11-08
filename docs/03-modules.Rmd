@@ -15,7 +15,7 @@ The meta.yml file is a YAML file containing some essential metadata on the modul
 List of <span class="required">**authors**</span>, containing:
 
 - <span class="required">**name**</span>
-- <span class="required">**contributions**</span>: One or more values from the [CRediT taxonomy](http://jeb.biologists.org/content/author-contributions).
+- <span class="required">**contributions**</span>: One or more values from the [CRediT taxonomy](https://casrai.org/credit/).
 - <span class="required">**orcid**</span>: See [https://orcid.org/](https://orcid.org/)
 - <span class="optional">**github**</span>: Recommended
 - <span class="optional">**mail**</span>: Recommended
